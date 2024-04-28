@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Argument Platform</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 40px;
+        color: #333;
+      }
+      h1 {
+        color: #0056b3;
+      }
+      form {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        font-weight: bold;
+      }
+      textarea {
+        width: 100%;
+        box-sizing: border-box; /* Makes sure the padding and border are included in the width */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 16px;
+        resize: vertical; /* Allows the user to resize the textarea vertically */
+      }
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+      button {
+        background-color: #0056b3;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #004494;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Input Rules</h1>
+    <form method="post">
+      <label for="strict_rule_input">Strict Rules:</label><br />
+      <textarea name="strict_rule_input" rows="10" cols="50"></textarea><br />
+
+      <label for="defeasible_rule_input">Defeasible Rules:</label><br />
+      <textarea name="defeasible_rule_input" rows="10" cols="50"></textarea
+      ><br />
+
+      <h2>Select Principles for Defeats</h2>
+      <div>
+        <input type="checkbox" name="principles" value="elitist" />
+        Elitist<br />
+        <input type="checkbox" name="principles" value="democratic" />
+        Democratic<br />
+        <input type="checkbox" name="principles" value="last-link" />
+        Last-Link<br />
+        <input type="checkbox" name="principles" value="weakest-link" />
+        Weakest-Link<br />
+      </div>
+
+      <button type="submit">Generate Arguments</button>
+    </form>
+  </body>
+</html>

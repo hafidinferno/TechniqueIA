@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Results</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 40px;
+        color: #333;
+      }
+      h1,
+      h2 {
+        color: #0056b3;
+      }
+      p {
+        background: white;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+      }
+      a {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #0056b3;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      a:hover {
+        background-color: #004494;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Generated Arguments</h1>
+    {% for arg in arguments %}
+    <p>{{ arg }}</p>
+    {% endfor %}
+
+    <h2>Contrapositions Generated</h2>
+    {% for rule in contrapositions %}
+    <p>{{ rule }}</p>
+    {% endfor %}
+
+    <h2>Undercuts</h2>
+    {% for undercut in undercuts %}
+    <p>{{ undercut[0].name }} undercuts {{ undercut[1].name }}</p>
+    {% endfor %}
+
+    <h2>Rebuts</h2>
+    {% for rebut in rebuts %}
+    <p>{{ rebut[0].name }} rebuts {{ rebut[1].name }}</p>
+    {% endfor %}
+
+    <h2>Successful Defeats</h2>
+    {% for defeat in successful_defeats %}
+    <p>{{ defeat[0].name }} defeats {{ defeat[1].name }}</p>
+    {% endfor %}
+
+    <h2>Ranking of Arguments</h2>
+    {% for rank, arg, burden in rankings %}
+    <p>Rank {{ rank }}: Argument {{ arg.name }} with burden {{ burden }}</p>
+    {% endfor %}
+
+    <a href="/">Back</a>
+  </body>
+</html>
